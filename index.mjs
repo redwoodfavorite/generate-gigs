@@ -5,7 +5,19 @@ import csv from 'fast-csv'
 import Baby from 'babyparse'
 import fs from 'fs'
 
-const gigData = Baby.parseFiles('./final_df7.csv').data.slice(1, 197)
+const allGigs = Baby.parseFiles('./final_df7.csv');
+
+// Batch 1: [1, 197]
+// (['2739_22', '2621_1', '2894_27']).forEach(id => {
+//   const index = allGigs.data.findIndex(el => ((el[2] + "_" + el[12]) === id));
+//   console.log(index, id)
+//   if (index !== -1) {
+//     allGigs.data.splice(index, 1)
+//   }
+// });
+// console.log(allGigs.data.length);
+
+const gigData = allGigs.data.slice(197, 1191)
 const gigIDList = JSON.parse(fs.readFileSync('./gig_ids.json'))
 const bundled = gigData.reduce((acc, row) => {
   if (acc[row[12]]) acc[row[12]].push(row)
@@ -59,10 +71,10 @@ Promise.all(
 )
 .then((gigIDs) => {
     fs.writeFileSync('./gig_ids.json', JSON.stringify(gigIDList))
-    console.log(`DONE: Created ${gigIDs.length} gigs ✔️`.green)
+    console.log(`DONE: Created ${gigIDs.length} gigs ✔️`)
 })
 .catch(e => {
-    console.log('oh shit'.red, e)
+    console.log('oh shit', e)
 })
 
 const formatQuestions = (productName, upc, productCategory, i) => ([

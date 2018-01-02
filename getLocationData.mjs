@@ -27,7 +27,7 @@ export default (addresses) => Promise.all(addresses.map((address) => new Promise
         formatted: location.formatted_address,
         specificity: location.types[0],
         lat: location.geometry.location.lat,
-        long: location.geometry.location.long
+        long: location.geometry.location.lng
       })
     }
   })
