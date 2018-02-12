@@ -13,7 +13,8 @@ export default (options) => new Promise((res, rej) => {
     },
     method: 'POST',
     uri: 'http://gigwalk.com/c/postAGig?',
-    proxy: 'http://127.0.0.1:8888',
+    // uri: 'http://50.18.117.61/c/postAGig?',
+    // proxy: 'http://127.0.0.1:8888',
     formData: {
       protoGigJSON: JSON.stringify(gigToEdit),
       action: 'saveAsDraft-AJAX'
@@ -22,6 +23,7 @@ export default (options) => new Promise((res, rej) => {
     if (err) {
       rej(err)
     } else {
+      console.log(response)
       if (JSON.parse(body).successFlag) {
         res(JSON.parse(body))
       } else {

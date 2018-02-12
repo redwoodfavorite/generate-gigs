@@ -3,7 +3,7 @@ import GoogleMapsAPI from 'googlemaps'
 
 const publicConfig = {
   key: 'AIzaSyD-9y0o-vT5Nyf358Zo2jBkVCPinGJDhmI',
-  stagger_time:       1000,
+  // stagger_time:       1000,
   // proxy:              'http://127.0.0.1:8888'
 };
 const gmAPI = new GoogleMapsAPI(publicConfig);
@@ -13,6 +13,10 @@ export default (addresses) => Promise.all(addresses.map((address) => new Promise
     if (err) rej(err)
     else {
       let location = response.results[0]
+      if (!location) {
+        res()
+        return
+      }
       res({
         ...(location.address_components.reduce((acc, component) =>
             ({
