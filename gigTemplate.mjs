@@ -93,64 +93,62 @@ export default {
      "type": "saveAsDraft-AJAX"
 }
 
-export const initialQuestions = [{
-    "type":"photo",
-    "state":"open",
-    "sequence":1,
-    "question_id":"",
-    "question":"Please take a clear and well-framed photo of the storefront.",
-    "propositions":""
- },
- {
-    "type":"multiple_choice",
-    "state":"open",
-    "sequence":2,
-    "question_id":"",
-    "question":"[DEVICE REQUIREMENT]: This gig requires you to take photos using a device similar to an iPhone 6, Galaxy 6 OR better. Please confirm that you are using a similar device. ",
-    "propositions":[
-       "I am using a similar device or better",
-       "I have an older model phone and will remove myself from this gig"
-    ]
- },
- {
-    "type":"check",
-    "state":"open",
-    "sequence":3,
-    "question_id":"",
-    "question":"[LETTER OF AUTHORIZATION]: If you are approached by a store employee at any time during this audit, please present this <a href=\"https://i.imgur.com/DcJjlkD.png\"> LETTER OF AUTHORIZATION </a>.",
-    "propositions":""
- },
- {
-    "type":"check",
-    "state":"open",
-    "sequence":4,
-    "question_id":"",
-    "question":"[PRODUCT PHOTO REQUIREMENTS]: For the following products listed below, please take up to 5 clear and well-framed CLOSE-UP photos. All photos must meet the following requirements: (1) Must take photos using a device similar to an iPhone 6, Galaxy 6 or better,  (2) photo must capture the FRONT packaging within the ENTIRE frame of the photo, (3) avoid any glare as much as possible, (4) ALL text, branding, and logo on the packaging should be CLEAR and VISIBLE. Please see <a href=\"https://i.imgur.com/89dnE5R.png\"> EXAMPLE PHOTO </a>. ***Any photos that fail to meet the above requirements will be rejected. ",
-    "propositions":""
- },
- {
-    "type":"check",
-    "state":"open",
-    "sequence":5,
-    "question_id":"",
-    "question":"[UPC INSTRUCTIONS]: Please note, we have provided the first 10 digits of the UPC for each product below, however, the product on the shelf may actually contain 12 digits. If the FIRST 10 DIGITS match, along with the product description, please proceed with the task. ***If you cannot locate a product, please approach a store associate to assist you. ",
-    "propositions":""
- }]
-
-export const finalQuestions = [
+export const initialQuestions = [
+    {
+        "type": "photo",
+        "state": "open",
+        "sequence": 1,
+        "question": "Please take a clear and well framed photo of the storefront.",
+        "propositions": ""
+    },
+    {
+        "type": "check",
+        "state": "open",
+        "sequence": 2,
+        "question": "Please present the letter of authorization <a href=\"https://imgur.com/DcJjlkD\"> here </a> if you are approached by a store associate during this Gig.",
+        "propositions": ""
+    }
+]
+export const finalQuestions =     [
   {
-    "type":"free_text",
-    "state":"open",
-    "sequence":46,
-    "question_id":"",
-    "question":"If a store associate helped you locate any of the items, please indicate their name(s) below:",
-    "propositions":""
+      "type": "photo",
+      "state": "open",
+      "sequence": 4,
+      "question": "Before you take a picture of the product, please make sure to lay the product flat and make sure the entire product is visible and unobstructed. Please see the examples here <a href=\"https://imgur.com/a/HUNKk\"> here</a>. Take at least 5 clear and well framed photos of the front of the product.  Please keep in mind that these photos will be used to promote the product so please do your best to take a professional picture :)",
+      "propositions": ""
   },
   {
-    "type":"free_text",
-    "state":"open",
-    "sequence":46,
-    "question_id":"",
-    "question":"Please enter any additional comments here that you think will be helpful to the client.",
-    "propositions":""
-}]
+        "type": "photo",
+        "state": "open",
+        "sequence": 5,
+        "question": "Take a clear and well framed photo of the UPC. Please see example photo <a href=\"https://i.imgur.com/a6lAVqb.jpg\"> here</a>.",
+        "propositions": ""
+    },
+    {
+        "type": "photo",
+        "state": "open",
+        "sequence": 6,
+        "question": "Take a photo of the price tag if the product is out of stock",
+        "propositions": ""
+    },
+    {
+        "type": "photo",
+        "state": "open",
+        "sequence": 7,
+        "question": "Please ask a store associate for help if you cannot find the product. If you could not find the product, please take photo of the aisle.",
+        "propositions": ""
+    },
+    {
+        "type": "free_text",
+        "state": "open",
+        "sequence": 8,
+        "question": "Please list store associates full name below if you did not find the product.",
+        "propositions": ""
+    },
+    {
+        "type": "free_text",
+        "state": "open",
+        "sequence": 9,
+        "question": "Please include any additional comments that will be helpful to the client.",
+        "propositions": ""
+    }]
