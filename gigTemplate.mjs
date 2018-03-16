@@ -1,33 +1,50 @@
 export default {
-     "gig_save_type": "gig",
-     "gig_due_type": "ASAP",
-    //  "proto_gig_id": "PROTOGIG2352609a8798b8b9aea82cc55f9f88dc",
-     "proto_gig_id": null,
-     "gig_description": "JOSEPH SCRIPT GENERATED",
-     "gig_drid": "ios",
-     "gig_street_cred_required": "0",
-     "gig_street_cred_bonus": "0",
-     "gig_create_timestamp": 1513303673,
-     "gig_modified_timestamp": Math.floor(Date.now() / 1000),
-     "gig_expire_timestamp": 2525745789,
-     "gig_structured_data": {
-        "skills_restrictions":false
-     },
-     "gig_extended_instructions": "Sriram Test project",
-     "gig_red_flagged": "0",
-     "gig_house_based": "0",
-     "gig_category":false,
-     "gig_featured": "0",
-     "gig_pay": "10",
-     "gig_duration": "900",
-     "gig_privacy_state": "public",
-     "gig_due_on": "0",
-     "gig_salesforce_id": "",
-     "gig_due_by":1513843140,
-     "gig_has_media": "1",
-     "gig_has_notepad": "0",
-     "gig_has_survey": "1",
-     "gig_survey_content": [],
+    "gig_save_type": "gig",
+    "gig_due_type": "ASAP",
+    "proto_gig_id": null,
+    "gig_description": "JOSEPH SCRIPT GENERATED",
+    "gig_drid": "ios",
+    "gig_street_cred_required": "0",
+    "gig_end_datetime": "2018-2-10 23:59",
+    "gig_street_cred_bonus": "0",
+    "gig_modified_timestamp": Math.floor(Date.now() / 1000),
+    "gig_structured_data": {
+       "skills_restrictions":false
+    },
+    "gig_extended_instructions": "For this Gig you will be going into a grocery store to take a picture of one product. We anticipate the Gig should take about 5 minutes. The purpose of this Gig is to take a quality photo of the product that will go in an online catalog.",
+    "gig_red_flagged": "0",
+    "gig_house_based": "0",
+    "gig_category":false,
+    "gig_featured": "0",
+    "gig_pay": "1.50",
+    "gig_duration": "300",
+    "gig_privacy_state": "public",
+    "gig_due_on": "0",
+    "gig_salesforce_id": "",
+    // "gig_due_by":1513843140,
+    "gig_has_media": "1",
+    "gig_has_notepad": "0",
+    "gig_has_survey": "1",
+    "gig_survey_content": [],
+    "gig_notepad_content":false,
+    "gig_survey_url":false,
+    "gig_num_gigwalkers":1,
+    "gig_auto_select_gigwalkers":true,
+    "gig_has_locations": "1",
+     "gig_survey_content": [
+         {
+             "sequence" : 1,
+             "question" : "This a task to complete.",
+             "state" : "open",
+             "type" : "check"
+         },
+         {
+             "sequence" : 2,
+             "question" : "take a photo",
+             "state" : "open",
+             "type" : "photo"
+         }
+     ],
      "gig_notepad_content":false,
      "gig_survey_url":false,
      "gig_num_gigwalkers":1,
@@ -74,8 +91,8 @@ export default {
            "metro_id": "stockton-ca"
         }
      ],
-     "gig_saved_draft":1,
-     "gig_group_id": "GROUP84d1e32bcf60ac48e40e7ab28851f145",
+    //  "gig_saved_draft":1,
+    //  "gig_group_id": "GROUP84d1e32bcf60ac48e40e7ab28851f145",
      "gig_auto_pilot":1,
      "gig_categories":[
         803
@@ -86,11 +103,9 @@ export default {
      "gig_start_timestamp":null,
      "gig_end_timestamp":1513843140,
      "gig_start_datetime":null,
-     "gig_end_datetime": "2017-12-20 23:59",
      "bundle_start_timestamp":null,
      "bundle_end_timestamp":null,
-     "bundle_tracker_id":null,
-     "type": "saveAsDraft-AJAX"
+     "bundle_tracker_id":null
 }
 
 export const initialQuestions = [
@@ -107,17 +122,16 @@ export const initialQuestions = [
         "sequence": 2,
         "question": "Please present the letter of authorization <a href=\"https://imgur.com/DcJjlkD\"> here </a> if you are approached by a store associate during this Gig.",
         "propositions": ""
-    }
-]
-export const finalQuestions =     [
-  {
-      "type": "photo",
-      "state": "open",
-      "sequence": 4,
-      "question": "Before you take a picture of the product, please make sure to lay the product flat and make sure the entire product is visible and unobstructed. Please see the examples here <a href=\"https://imgur.com/a/HUNKk\"> here</a>. Take at least 5 clear and well framed photos of the front of the product.  Please keep in mind that these photos will be used to promote the product so please do your best to take a professional picture :)",
-      "propositions": ""
-  },
-  {
+    }]
+
+export const finalQuestions = [{
+        "type": "photo",
+        "state": "open",
+        "sequence": 4,
+        "question": "Please make sure the entire product is visible and unobstructed. Please see the examples<a href=\"https://imgur.com/a/HUNKk\"> here</a>. Take at least 5 clear and well framed photos of the FRONT of the product.  Keep in mind that these photos will be used to promote the product so please do your best to take a professional picture :)",
+        "propositions": ""
+    },
+    {
         "type": "photo",
         "state": "open",
         "sequence": 5,
